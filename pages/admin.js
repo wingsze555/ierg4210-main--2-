@@ -16,6 +16,7 @@ export default function Admin() {
     const [password, setPassword] = useState('');
     const [login, setLogin] = useState(false);
     const [error, setMessage] = useState('');
+      const [order, setOrder] = useState([]);
 
     const handlecatUpdateChange = (event) => {
         setcatUpdate(event.target.value);
@@ -291,7 +292,6 @@ export default function Admin() {
                 <div className={styles.divider}></div>
                 <Link href="/" className={styles.link}>Back to Grocery Stores</Link>
             </header>
-            {/*
             {login === false && (
                 <div>
                     <div>{error}</div>
@@ -306,8 +306,52 @@ export default function Admin() {
                 </div>
             )}
             {login === true && (
-            */}
+                
                 <div>
+
+                {/*add */}
+                    <h5>All Orders</h5>
+                    <table className={styles.Table}>
+            <tr>
+              <th className={styles.Column}>Invoice ID</th>
+              <th className={styles.Column}>Date</th>
+              <th className={styles.Column}>Status</th>
+              <th className={styles.Column}>User Name</th>
+              <th className={styles.Column}>Product</th>
+              <th className={styles.Column}>Total Amount</th>
+            </tr>
+            {order.map((order) => {
+              const orderDetails = JSON.parse(order.orderDetails);
+              const totalAmount = orderDetails ? orderDetails.reduce((sum, item) => {
+                const quantity = parseInt(item.quantity);
+                const unitAmount = parseFloat(item.unit_amount.value);
+                return sum + quantity * unitAmount;
+              }, 0) : 0;
+
+              return (
+                <tr key={order.UUID}>
+                  <td className={styles.Detail}>{order.UUID}</td>
+                  <td className={styles.Detail}>{order.date}</td>
+                  <td className={styles.Detail}>{order.status}</td>
+                  <td className={styles.Detail}>{order.username}</td>
+                  <td className={styles.Detail}>
+                    {Array.isArray(orderDetails) ? (
+                      orderDetails.map(item => (
+                        <p key={item.name}>
+                          {`${item.quantity} ${item.name}: $${item.unit_amount.value}`}
+                        </p>
+                      ))
+                    ) : (
+                      <p>No order details available.</p>
+                    )}
+                  </td>
+                  <td className={styles.Detail}>${totalAmount.toFixed(2)}</td>
+                </tr>
+              );
+            })}
+          </table>
+            {/*add */}
+
                     <div className={styles.divider}></div>
                     <h2>By Category:</h2>
 
@@ -494,7 +538,7 @@ export default function Admin() {
                         </td>
                     </tr>
                 </div>
-            {/*})} */}
+            )}
         </div>
 
     );

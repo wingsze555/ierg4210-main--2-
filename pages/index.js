@@ -130,9 +130,6 @@ export default function Home({ navigation, findProduct, product }) {
                 <Cart updateCart={cartProduct} />
               </div>
             </div>
-            <div className={styles.submenu}>
-              <Cart updateCart={cartProduct} />
-            </div>
           </div>
         </div>
       </header>

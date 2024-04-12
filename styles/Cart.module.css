@@ -14,6 +14,12 @@
     grid-column: auto;
 }
 
+.paypalButton{
+    cursor: pointer;
+    margin-top: 30px;
+    border-radius: 5px;
+    width: 20vh;
+}
 .checkoutButton {
     cursor: pointer;
     margin-top: 20px;
