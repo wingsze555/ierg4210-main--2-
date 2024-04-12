@@ -97,6 +97,11 @@ export default function Product({ navigation, findProduct }) {
                 <Cart updateCart={cartProduct} />
               </div>
             </div>
+            {/*
+            <div className={styles.submenu}>
+              <Cart updateCart={cartProduct} />
+            </div>
+            */}
           </div>
         </div>
       </header>
