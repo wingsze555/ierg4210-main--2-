@@ -1,0 +1,80 @@
+.topNav {
+    margin-top: 20px;
+    margin-left: 10px;
+    padding-bottom: 30px;
+    overflow-x: auto;
+}
+
+.link {
+    text-decoration: underline;
+    margin-bottom: 20px;
+}
+
+.divider {
+    min-height: 4vh;
+}
+
+.divider2 {
+    height: 2vh;
+}
+
+.type {
+    font-size: 30px;
+    text-decoration: underline;
+}
+
+.row {
+    align-items: center;
+}
+
+.textMargin {
+    margin-top: 10px;
+}
+
+.adminList {
+    margin-top: 30px;
+    padding: 10px 10px;
+    padding-left: 5vh;
+    padding-right: 5vh;
+    margin: 10px;
+    border-radius: 5px;
+    min-width: 35vh;
+}
+
+.panelList {
+    padding-top: 10px;
+}
+
+.label {
+    display: block;
+    margin-top: 10px;
+}
+
+.submitButton {
+    cursor: pointer;
+    display: block;
+    font-size: 15px;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+    font-family: "Courier New", "Bold";
+}
+
+.deleteButton {
+    cursor: pointer;
+    display: block;
+    font-size: 15px;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+    font-family: "Courier New", "Bold";
+    color: red;
+}
+
+.imgButton {
+    font-size: 10px;
+}
+
+.warning {
+    padding-top: 10px;
+    font-size: 12px;
+    color: red;
+}

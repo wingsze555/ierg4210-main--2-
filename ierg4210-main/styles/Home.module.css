@@ -1,0 +1,122 @@
+.global {
+  text-align: center;
+  padding-top: 30px;
+}
+
+.topNav {
+  z-index: 1;
+  position: fixed;
+  width: 100%;
+  height: 70px;
+  padding: 20px 20px;
+  border-radius: 2px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 0 3px black;
+  background-color: #f0dab9;
+}
+
+.leftNav {
+  display: flex;
+  justify-content: center;
+}
+
+.middleNav {
+  display: flex;
+  justify-content: center;
+}
+
+.rigthNav {
+  display: flex;
+  justify-content: right;
+}
+
+.navList {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.navList li {
+  margin: 0 10px;
+}
+
+/*Shopping List*/
+
+.shoppingList {
+  margin-left: 20px;
+  margin-right: auto;
+}
+
+.submenu {
+  background-color: #f0dab9;
+  border: #dbb884;
+  align-items: center;
+  position: absolute;
+  padding: 10px;
+  border-radius: 15px;
+  margin-left: -30vh;
+  min-width: 40vh;
+  border-style: solid;
+  z-index: 999;
+}
+
+.shoppingList .submenu {
+  display: none;
+}
+
+.shoppingList:hover .submenu {
+  display: block;
+}
+
+.navList {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.categoryList {
+  cursor: pointer;
+  flex-wrap: wrap;
+  background-color: #f0dab9;
+  justify-content: center;
+  padding-right: 5px;
+  padding-left: 5px;
+  margin-left: 10px;
+  margin-right: 10px;
+  border-color: white;
+  border-radius: 2px;
+}
+
+.title {
+  font-weight: bold;
+  font-family: "Courier New", "Bold";
+  font-size: 20px;
+}
+
+.divider {
+  min-height: 10vh;
+  background-color: #f0dab9;
+}
+
+.card {
+  background-color: #f0dab9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: calc(10px + 2vmin);
+}
+
+.navigationBar {
+  margin-right: auto;
+  margin-left: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: medium;
+}

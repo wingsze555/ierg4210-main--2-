@@ -1,0 +1,25 @@
+.inputField {
+    max-width: 10vh;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0px;
+}
+
+.item {
+    margin-top: 20px;
+    display: grid;
+    grid-column: auto;
+}
+
+.checkoutButton {
+    cursor: pointer;
+    margin-top: 20px;
+    padding: 5px 10px 5px 10px;
+    border-color: #dbb884;
+    background-color: #f0dab9;
+    border-radius: 5px;
+    width: 20vh;
+}
