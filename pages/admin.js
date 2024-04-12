@@ -368,8 +368,7 @@ export default function Admin() {
                 
                 <div>
 
-                {/*add */}
-                    <h5>All Orders</h5>
+                    <div>Order List:</div>
                     <table className={styles.Table}>
             <tr>
               <th className={styles.Column}>Invoice ID</th>
