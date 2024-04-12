@@ -16,7 +16,7 @@ export default function Admin() {
     const [password, setPassword] = useState('');
     const [login, setLogin] = useState(false);
     const [error, setMessage] = useState('');
-      const [order, setOrder] = useState([]);
+    const [order, setOrder] = useState([]);
 
     const handlecatUpdateChange = (event) => {
         setcatUpdate(event.target.value);
@@ -225,6 +225,65 @@ export default function Admin() {
                 console.error('Error in fetching data:', error);
             });
     }, []);
+
+    
+  useEffect(() => {
+    fetch('/api/readCookie')
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.json();
+      })
+      .then((data) => {
+        console.log(data.auth);
+        if(data.auth == false){
+          window.location.href = '/';
+        }
+      })
+      .catch((error) => {
+        console.error('Error fetching data:', error);
+      });
+    fetch('/api/category')
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.json();
+      })
+      .then((data) => {
+        setCategoryAll(data.categoryAll);
+      })
+      .catch((error) => {
+        console.error('Error fetching data:', error);
+      });
+    fetch('/api/allProduct')
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.json();
+      })
+      .then((data) => {
+        setProductAll(data.allProducts);
+      })
+      .catch((error) => {
+        console.error('Error fetching data:', error);
+      });
+    fetch('/api/order')
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.json();
+      })
+      .then((data) => {
+        setOrder(data.orders);
+      })
+      .catch((error) => {
+        console.error('Error fetching data:', error);
+      });
+  }, []);
 
     const [productName, setProductName] = useState('');
     const [productPrice, setProductPrice] = useState(undefined);
