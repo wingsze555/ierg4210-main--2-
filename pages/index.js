@@ -5,6 +5,7 @@ import { Link, useLocation } from 'react-router-dom';
 import styles from '../styles/Home.module.css';
 import ProductList from './productList.js';
 import Cart from './cart.js';
+import Login from './login';
 
 export default function Home({ navigation, findProduct, product }) {
   const location = useLocation();
@@ -103,7 +104,9 @@ export default function Home({ navigation, findProduct, product }) {
         <div className={styles.leftNav}>
           <header className={styles.title}>
             <Link href="/">Grocery Store</Link>
+            
           </header>
+          
         </div>
         <div className={styles.middleNav}>
           <ul className={styles.navList}>
@@ -121,16 +124,21 @@ export default function Home({ navigation, findProduct, product }) {
               ))}
             </span>
           </ul>
+          Hi Guest, 
+          <Link to="/login">Login?</Link>
+            
         </div>
         <div className={styles.rightNav}>
-          <div className={styles.shoppingList}>
+          
+            
             <div className={styles.shoppingList}>
+            
               <FontAwesomeIcon icon={faCartShopping} />
               <div className={styles.submenu}>
                 <Cart updateCart={cartProduct} />
               </div>
             </div>
-          </div>
+          
         </div>
       </header>
 

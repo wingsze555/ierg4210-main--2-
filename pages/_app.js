@@ -100,7 +100,8 @@ export default function App() {
         {/*<Route path="*" element={<Navigate to="/" />} />*/}
         <Route path="/" element={redirectToLogin} />
         <Route exact path="/admin" element={<Admin />} />
-        <Route path="/login" element={<Login />} />
+        <Route exact path="/login" element={<Login />} />
+        {/*<Route path="/login" element={<Login />} /> */}
       </Routes>
     </Router>
   );

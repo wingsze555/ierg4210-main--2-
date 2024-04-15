@@ -3,6 +3,7 @@ import styles from "../styles/Admin.module.css";
 import { Navigate } from 'react-router-dom';
 import Admin from './admin';
 
+
 export default function User() {
   const [user, setUser] = useState('');
   const [password, setPassword] = useState('');
